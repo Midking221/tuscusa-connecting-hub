@@ -5,6 +5,9 @@ import { nitro } from "nitro/vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+  define: {
+    'process.env.LOVABLE_TAGGER': 'false',
+  },
   plugins: [
     tailwindcss(),
     tanstackStart(),
