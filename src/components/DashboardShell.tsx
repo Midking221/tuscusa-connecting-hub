@@ -12,9 +12,11 @@ import {
   Wallet,
   FileText,
   ShieldCheck,
+  UserCog,
   LogOut,
   Menu,
 } from "lucide-react";
+
 import { useState } from "react";
 
 const memberNav = [
@@ -31,10 +33,12 @@ const adminNav = [
   { to: "/dashboard/admin/verify", label: "Verify Members", icon: ShieldCheck },
   { to: "/dashboard/admin/funding", label: "Funding", icon: Wallet },
   { to: "/dashboard/admin/reports", label: "Reports", icon: FileText },
+  { to: "/dashboard/admin/roles", label: "Manage Roles", icon: UserCog, adminOnly: true },
 ];
 
+
 export function DashboardShell() {
-  const { profile, isStaff, isVerified } = useAuth();
+  const { profile, isStaff, isAdmin, isVerified } = useAuth();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
 
@@ -62,7 +66,7 @@ export function DashboardShell() {
       {isStaff && (
         <>
           <div className="px-3 pb-2 pt-4 text-[10px] uppercase tracking-wider text-sidebar-foreground/50 font-semibold">Executive</div>
-          {adminNav.map((item) => {
+          {adminNav.filter((i) => !i.adminOnly || isAdmin).map((item) => {
             const active = pathname.startsWith(item.to);
             return (
               <Link
@@ -103,7 +107,7 @@ export function DashboardShell() {
           <div className="px-3 py-2 text-xs">
             <div className="font-medium text-sidebar-foreground truncate">{profile?.full_name ?? "Member"}</div>
             <div className="text-sidebar-foreground/60 truncate">
-              {isStaff ? "Executive" : isVerified ? "Verified member" : "Pending verification"}
+              {isAdmin ? "Admin" : isStaff ? "Executive" : isVerified ? "Verified member" : "Pending verification"}
             </div>
           </div>
           <Button
