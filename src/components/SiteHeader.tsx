@@ -21,9 +21,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-hero text-primary-foreground font-bold">
-            T
-          </div>
+          <img src="/tuscusa-logo.png" alt="TUSCUSA" className="h-9 w-9 rounded-full object-cover" />
           <div className="leading-tight">
             <div className="font-bold text-sm tracking-tight">TUSCUSA</div>
             <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Turkana South Students</div>
@@ -123,7 +121,7 @@ export function SiteFooter() {
       <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-hero text-primary-foreground font-bold">T</div>
+            <img src="/tuscusa-logo.png" alt="TUSCUSA" className="h-9 w-9 rounded-full object-cover" />
             <span className="font-bold">TUSCUSA</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
