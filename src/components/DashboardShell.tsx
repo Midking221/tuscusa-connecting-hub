@@ -94,7 +94,7 @@ export function DashboardShell() {
       {/* Sidebar — desktop */}
       <aside className="hidden md:flex w-64 shrink-0 flex-col bg-sidebar text-sidebar-foreground border-r border-sidebar-border">
         <Link to="/" className="flex items-center gap-2 h-16 px-5 border-b border-sidebar-border">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-gradient text-gold-foreground font-bold text-sm">T</div>
+          <img src="/tuscusa-logo.png" alt="TUSCUSA" className="h-9 w-9 rounded-full object-cover" />
           <div className="leading-tight">
             <div className="font-bold text-sm">TUSCUSA</div>
             <div className="text-[10px] text-sidebar-foreground/60 uppercase tracking-wider">Dashboard</div>
@@ -127,7 +127,7 @@ export function DashboardShell() {
           <div className="absolute inset-0 bg-black/50" />
           <aside className="absolute left-0 top-0 bottom-0 w-72 bg-sidebar text-sidebar-foreground p-3 flex flex-col" onClick={(e) => e.stopPropagation()}>
             <Link to="/" className="flex items-center gap-2 mb-4 px-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-gradient text-gold-foreground font-bold text-sm">T</div>
+              <img src="/tuscusa-logo.png" alt="TUSCUSA" className="h-9 w-9 rounded-full object-cover" />
               <span className="font-bold">TUSCUSA</span>
             </Link>
             <nav className="flex-1 space-y-1 overflow-y-auto">
@@ -149,6 +149,7 @@ export function DashboardShell() {
       <div className="flex-1 flex flex-col min-w-0">
         <header className="md:hidden h-14 border-b border-border bg-background flex items-center px-3 gap-3">
           <button onClick={() => setOpen(true)} className="p-2"><Menu className="h-5 w-5" /></button>
+          <img src="/tuscusa-logo.png" alt="TUSCUSA" className="h-7 w-7 rounded-full object-cover" />
           <span className="font-semibold">TUSCUSA</span>
         </header>
         <main className="flex-1 p-4 md:p-8 overflow-x-hidden">
